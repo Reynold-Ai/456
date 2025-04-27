@@ -1,0 +1,184 @@
+/* 通用樣式重置 */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box; /* 重置所有元素的內外邊距，避免不同瀏覽器的樣式差異 */
+}
+
+/* 頁面基本樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設置頁面字型 */
+    background: linear-gradient(to bottom, #f9f9f9, #e1f5fe); /* 漸層背景從上到下，輕微的灰藍色到淺藍色過渡 */
+    color: #333; /* 設定文字顏色 */
+    line-height: 1.6; /* 行高，增強可讀性 */
+}
+
+/* 頁首樣式 */
+header {
+    background: linear-gradient(to bottom, #4CAF50, #2e7d32); /* 頁首使用綠色漸層背景，主題色 */
+    color: white; /* 白色文字 */
+    padding: 20px 30px; /* 頁首內邊距 */
+    text-align: left; /* 左對齊 */
+    position: relative;
+}
+
+/* 頁首標題 */
+header h1 {
+    font-size: 36px; /* 設定頁首標題字型大小 */
+    margin: 0; /* 去掉外邊距 */
+}
+
+header h1 a {
+    color: white; /* 白色鏈接文字 */
+    text-decoration: none; /* 去掉鏈接下劃線 */
+}
+
+header h1 a:hover {
+    color: #FFD700; /* 金色的懸浮效果 */
+}
+
+/* 導航區 */
+header nav ul {
+    list-style: none; /* 去掉列表的樣式 */
+    padding: 0; /* 去掉內邊距 */
+}
+
+header nav ul li {
+    display: inline-block; /* 將每個列表項設為內聯區塊，顯示在同一行 */
+    margin-right: 20px; /* 設定右邊距 */
+}
+
+header nav ul li a {
+    color: white; /* 白色文字 */
+    text-decoration: none; /* 去掉鏈接下劃線 */
+    font-size: 16px; /* 設定字型大小 */
+    font-weight: bold; /* 設定字型為粗體 */
+}
+
+header nav ul li a:hover {
+    color: #FFD700; /* 當懸浮時，文字顏色變為金色 */
+}
+
+/* 引導文字樣式 */
+nav .guide-text {
+    font-size: 1.2rem; /* 增大字型 */
+    color: #FFD700; /* 設定顏色為金色 */
+    font-weight: bold; /* 字型加粗 */
+    text-align: center; /* 置中顯示 */
+    margin-bottom: 10px; /* 增加底部間距 */
+    padding: 10px;
+}
+
+/* 服務時間區塊 */
+.service-times, .service-details {
+    background-color: #ffffff; /* 設定白色背景 */
+    padding: 20px; /* 內邊距 */
+    margin: 20px; /* 外邊距 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 輕微的陰影，讓區塊更有層次感 */
+}
+
+h2 {
+    font-size: 24px; /* 設定小標題字型大小 */
+    margin-bottom: 10px; /* 增加底部間距 */
+    color: #4CAF50; /* 使用綠色，與主題色調一致 */
+}
+
+/* 表格樣式 */
+table {
+    width: 100%; /* 設定表格寬度為100% */
+    margin: 20px 0; /* 上下間距 */
+    border-spacing: 0; /* 去掉單元格間距 */
+    border-collapse: collapse; /* 合併邊框 */
+    text-align: center; /* 文字置中 */
+    background-color: #fff; /* 白色背景 */
+    border: 1px solid #ddd; /* 灰色邊框 */
+}
+
+/* 表格單元格樣式 */
+td, th {
+    padding: 12px; /* 設定單元格內邊距 */
+    border: 1px solid #ddd; /* 灰色邊框 */
+}
+
+/* 表格標題樣式 */
+.service-times th, .service-details th {
+    background-color: #4CAF50; /* 設定表格標題的背景色為主題綠色 */
+    color: white; /* 白色文字 */
+}
+
+/* 類別標題樣式，區分不同區塊 */
+.category-header {
+    font-weight: bold; /* 字型加粗 */
+    padding: 10px; /* 內邊距 */
+    color: white; /* 白色文字 */
+}
+
+/* 中午休息時間 - 橙色 */
+.category-lunch-time {
+    background-color: #ff7043; /* 橙色背景，適合表現活力 */
+}
+
+/* 辦事 - 紫色 */
+.category-affairs {
+    background-color: #7E57C2; /* 紫色背景，適合表現莊重或神秘感 */
+}
+
+/* 其他 - 藍色 */
+.category-other {
+    background-color: #42a5f5; /* 藍色背景，適合表現清新、寧靜感 */
+}
+
+/* 點燈蠟燭 - 金色背景，紅橙色文字 */
+.category-candle-lighting {
+    background-color: #FFD700; /* 金色背景，與燭光的意象匹配 */
+    color: #ff7043; /* 紅橙色文字，增加對比，便於閱讀 */
+}
+
+
+/* 頁尾 */
+footer {
+    text-align: center; /* 文字置中 */
+    padding: 15px; /* 內邊距 */
+    background: linear-gradient(to bottom, #333, #444); /* 頁尾漸層背景，深色調以突出內容 */
+    color: white; /* 白色文字 */
+    position: fixed; /* 固定在頁面底部 */
+    width: 100%; /* 佔滿寬度 */
+    bottom: 0; /* 緊貼底部 */
+}
+
+/* 預約按鈕 */
+.book-now {
+    position: fixed; /* 固定在頁面右下角 */
+    bottom: 20px;
+    right: 20px;
+    background-color: #f76c6c; /* 背景為柔和的紅色 */
+    color: white; /* 白色文字 */
+    padding: 15px 30px; /* 內邊距 */
+    border-radius: 50px; /* 圓形按鈕 */
+    font-size: 18px; /* 設定字型大小 */
+    font-weight: bold; /* 設定字型為粗體 */
+    text-decoration: none; /* 去掉鏈接下劃線 */
+    transition: background-color 0.3s, transform 0.3s; /* 添加動畫效果 */
+}
+
+.book-now:hover {
+    background-color: #d14e4e; /* 懸浮時變為暗紅色 */
+    transform: scale(1.1); /* 懸浮時放大 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 28px; /* 響應式設計，標題字型在小螢幕上縮小 */
+    }
+
+    .book-now {
+        font-size: 16px; /* 設定預約按鈕字型大小 */
+        padding: 12px 25px; /* 設定預約按鈕內邊距 */
+    }
+
+    footer p {
+        font-size: 14px; /* 設定頁尾字型大小 */
+    }
+}

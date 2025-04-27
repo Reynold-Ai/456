@@ -1,0 +1,142 @@
+/* 頁面基礎樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設定字型 */
+    margin: 0; /* 清除頁面外邊距 */
+    padding: 0; /* 清除頁面內邊距 */
+    background-color: #f5f5f5; /* 設定頁面背景顏色 */
+    color: #333; /* 設定文字顏色 */
+}
+
+/* 頁首樣式 */
+header.hero-section {
+    background-color: #3498db; /* 設定頁首背景顏色 */
+    color: white; /* 設定文字顏色 */
+    text-align: center; /* 文字置中 */
+    padding: 40px 20px; /* 設定內邊距 */
+}
+
+/* 標題連結美化 */
+.header-title {
+    font-size: 2.5rem; /* 設定字體大小 */
+    font-weight: bold; /* 設定字體粗細 */
+    color: white; /* 設定文字顏色 */
+    text-decoration: none; /* 去除連結下劃線 */
+    letter-spacing: 1px; /* 調整字母間距 */
+    text-transform: uppercase; /* 讓文字變為全大寫 */
+    transition: all 0.3s ease; /* 設定過渡效果 */
+}
+
+/* 懸停效果 */
+.header-title:hover {
+    color: #f39c12; /* 懸停時變更文字顏色 */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* 增加文字陰影效果 */
+    transform: scale(1.1); /* 鼠標懸停時放大文字 */
+}
+
+/* 頁面標題位置 */
+header.hero-section .header-title {
+    display: inline-block; /* 使標題不換行 */
+    padding: 10px 20px; /* 給標題周圍添加一些內邊距 */
+    border-radius: 5px; /* 設定圓角邊框 */
+    background-color: rgba(52, 152, 219, 0.8); /* 設定標題背景顏色（半透明） */
+}
+
+/* Google 日曆區域 */
+.calendar-container {
+    text-align: center; /* 文字置中 */
+    margin: 40px 0; /* 設定外邊距 */
+}
+
+.calendar-iframe {
+    width: 100%; /* 設定寬度為 100% */
+    max-width: 800px; /* 設定最大寬度 */
+    height: 600px; /* 設定高度 */
+    border: none; /* 去除邊框 */
+}
+
+/* 最新消息區域 */
+.news-section {
+    max-width: 1000px; /* 設定最大寬度 */
+    margin: 0 auto; /* 置中顯示 */
+    padding: 20px; /* 設定內邊距 */
+}
+
+.news-section h2 {
+    font-size: 2.5rem; /* 設定標題字體大小 */
+    text-align: center; /* 文字置中 */
+    color: #2c3e50; /* 設定文字顏色 */
+    margin-bottom: 20px; /* 設定底部邊距 */
+}
+
+/* 最新消息項目樣式 */
+.news-item {
+    background-color: white; /* 設定背景顏色 */
+    padding: 20px; /* 設定內邊距 */
+    margin-bottom: 20px; /* 設定底部邊距 */
+    border-radius: 8px; /* 設定圓角邊框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 設定陰影效果 */
+}
+
+.news-item h3 {
+    font-size: 1.8rem; /* 設定標題字體大小 */
+    color: #2c3e50; /* 設定標題文字顏色 */
+    margin-bottom: 10px; /* 設定底部邊距 */
+}
+
+.news-item p {
+    font-size: 1rem; /* 設定文字字體大小 */
+    line-height: 1.6; /* 設定行高 */
+}
+
+.event-details p {
+    margin-bottom: 10px; /* 設定段落間距 */
+}
+
+/* 活動日期樣式 */
+.event-date {
+    font-size: 1.1rem; /* 設定字體大小 */
+    font-weight: bold; /* 加粗字體 */
+    margin-top: 20px; /* 設定上邊距 */
+    color: #e67e22; /* 設定文字顏色 */
+}
+
+/* 呼叫行動按鈕容器 */
+.call-to-action {
+    margin-top: 20px; /* 設定上邊距 */
+    text-align: center; /* 文字置中 */
+}
+
+/* 報名按鈕樣式 */
+.btn-sign-up {
+    background-color: #3498db; /* 設定背景顏色 */
+    color: white; /* 設定文字顏色 */
+    font-size: 1rem; /* 設定字體大小 */
+    padding: 10px 20px; /* 設定內邊距 */
+    border: none; /* 去除邊框 */
+    border-radius: 5px; /* 設定圓角邊框 */
+    cursor: pointer; /* 設定鼠標樣式 */
+    transition: background-color 0.3s; /* 設定過渡效果 */
+}
+
+.btn-sign-up:hover {
+    background-color: #2980b9; /* 懸停時改變背景顏色 */
+}
+
+/* 報名按鈕禁用樣式 */
+.btn-sign-up[disabled] {
+    background-color: #bdc3c7; /* 設定禁用狀態的背景顏色 */
+    cursor: not-allowed; /* 設定禁用狀態的鼠標樣式 */
+}
+
+.btn-sign-up[disabled]:hover {
+    background-color: #bdc3c7; /* 禁用狀態下按鈕無變色 */
+}
+
+/* 頁腳樣式 */
+footer {
+    background-color: #2c3e50; /* 設定頁腳背景顏色 */
+    color: white; /* 設定文字顏色 */
+    text-align: center; /* 文字置中 */
+    padding: 20px; /* 設定內邊距 */
+    margin-top: 40px; /* 設定上邊距 */
+}

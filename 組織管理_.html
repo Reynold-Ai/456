@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>歷任宮主介紹</title>
+    <link rel="stylesheet" href="組織管理.CSS"> <!-- 引入外部CSS樣式表 -->
+</head>
+<body>
+
+    <!-- 頁首 -->
+    <header>
+        <h1>關於我們</h1>
+        <!-- 下拉式選單放在header中 -->
+        <nav>
+            <select id="year-select" onchange="navigateToPage()">
+                <option value="#">組織架構</option>
+                <option value="關於我們_.html">地理概述</option>
+                <option value="#">創建歷史</option>
+                <option value="歷任宮主_.html">歷任宮主</option>
+
+            </select>
+        </nav>
+    </header>
+
+    <!-- 主體內容區域 -->
+    <div class="main-container">
+        <!-- 左側側邊欄 -->
+        <aside class="sidebar">
+            <h3>管理委員會</h3>
+            <ul id="committee-list">
+                <li><a href="#" onclick="updateContent('規章制度')">規章制度</a></li>
+                <li><a href="#" onclick="updateContent('組織編制')">組織編制</a></li>
+                <li><a href="#" onclick="updateContent('第1屆')">第1屆 - 2020至2024</a></li>
+                <li><a href="#" onclick="updateContent('第2屆')">第2屆 - 2024至2028</a></li>
+                <li><a href="#" onclick="updateContent('第3屆')">第3屆 - 2028至2032</a></li>
+                <li><a href="#" onclick="updateContent('第4屆')">第4屆 - 2032至2036</a></li>
+            </ul>
+        </aside>
+
+        <!-- 右側主要內容 -->
+        <div class="content" id="content">
+            <h2>第X屆 - 委員會組織架構</h2>
+
+            <!-- 規章制度表格 -->
+            <div id="regulations-table" style="display:none;">
+                <h3>管理條文</h3>
+                <ol id="regulations-list">
+                    <!-- 規章制度條文會在此動態填充 -->
+                </ol>
+            </div>
+
+            <!-- 組織編制表格 -->
+            <div id="organization-table" style="display:none;">
+                <table id="committee-table">
+                    <thead>
+                        <tr>
+                            <th>職位</th>
+                            <th>職責</th>
+                            <th>配額</th>
+                        </tr>
+                    </thead>
+                    <tbody id="organization-body">
+                        <!-- 組織編制資料會在此動態填充 -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 歷屆委員表格 -->
+            <div id="committee-table-div" style="display:none;">
+                <table id="committee-table">
+                    <thead>
+                        <tr>
+                            <th>職位</th>
+                            <th>姓名</th>
+                        </tr>
+                    </thead>
+                    <tbody id="history-body">
+                        <!-- 歷屆委員資料會在此動態填充 -->
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>版權所有 © 2025</p>
+    </footer>
+
+    <script>
+        // 規章制度 - 條文
+        const regulations = [
+            "條文一：本組織設立的目的為... (此處補充條文內容)",
+            "條文二：所有會員須遵守的規則包括... (此處補充條文內容)",
+            "條文三：管理委員會的職責為... (此處補充條文內容)",
+            "條文四：對於違規者的處罰包括... (此處補充條文內容)"
+        ];
+
+        // 組織編制 - 職位與職責描述，包括配額
+        const organization = [
+            { position: "主任委員", description: "負責全面管理，主持各項會議，對外代表組織，擬定組織運作方針，負責重大決策的制定及執行監督。", quota: "1員" },
+            { position: "副主任委員", description: "協助主任委員處理日常事務，並在主任委員缺席時代理其職位，負責項目分配和監督執行。", quota: "2員" },
+            { position: "秘書", description: "負責會議紀錄、文件管理與溝通協調，定期更新組織資料，協助處理行政事宜及保管相關檔案。", quota: "1員" },
+            { position: "財務", description: "負責組織的財務管理與監控，制定年度預算，負責經費審核、財務報表和資金調配，確保財務運作的合規性。", quota: "1員" },
+            { position: "監事", description: "負責審查組織的財務及運作，確保其運作透明與合法，監督各部門的工作情況並定期提出改進建議。", quota: "1員" },
+            { position: "常務", description: "負責協調各部門間的合作，處理日常行政事務，推動組織各項計劃的落實，確保組織運作順利。", quota: "1員" },
+            { position: "委員", description: "負責協助主任委員及副主任委員執行各項行政和管理工作，參與日常運作的決策及任務分配。", quota: "3員" },
+            { position: "顧問", description: "提供專業建議與指導，協助解決組織運作中的問題，為組織提供策略性意見和市場動向分析。", quota: "1員" },
+        ];
+
+        // 歷屆委員會資料
+        const committees = {
+            "第1屆": [
+                { position: "主任委員", name: "陳XX" },
+                { position: "副主任委員", name: "李YY" },
+                { position: "秘書", name: "王ZZ" },
+                { position: "委員", name: "張WW" },
+                { position: "委員", name: "蔡AA" }
+            ],
+            "第2屆": [
+                { position: "主任委員", name: "劉AA" },
+                { position: "副主任委員", name: "張BB" },
+                { position: "秘書", name: "王CC" },
+                { position: "委員", name: "李DD" },
+                { position: "委員", name: "陳EE" }
+            ],
+            "第3屆": [
+                { position: "主任委員", name: "黃FF" },
+                { position: "副主任委員", name: "蔡GG" },
+                { position: "秘書", name: "陳HH" },
+                { position: "委員", name: "楊II" },
+                { position: "委員", name: "李JJ" }
+            ],
+            "第4屆": [
+                { position: "主任委員", name: "林鄉" },
+                { position: "副主任委員", name: "高LL" },
+                { position: "秘書", name: "張MM" },
+                { position: "財務委員", name: "王NN" },
+                { position: "公關委員", name: "李OO" },
+                { position: "委員", name: "李OO" }
+            ]
+        };
+
+        // 顯示規章制度
+        function updateRegulations() {
+            var title = document.querySelector('h2');
+            var list = document.getElementById('regulations-list');
+
+            // 顯示規章制度表格
+            document.getElementById("regulations-table").style.display = "block";
+            document.getElementById("organization-table").style.display = "none";
+            document.getElementById("committee-table-div").style.display = "none";
+
+            // 清空現有條文內容
+            list.innerHTML = '';
+
+            // 填充規章制度的條文並確保條文編號不重複
+            regulations.forEach((regulation, index) => {
+                var listItem = document.createElement('ol');
+                listItem.textContent = `${index + 1}. ${regulation}`;
+                list.appendChild(listItem);
+            });
+
+            title.innerHTML = "規章制度 - 管理條文";
+        }
+
+        // 顯示組織編制
+        function updateOrganization() {
+            var title = document.querySelector('h2');
+            var tbody = document.getElementById('organization-body');
+
+            // 顯示組織編制表格
+            document.getElementById("organization-table").style.display = "block";
+            document.getElementById("regulations-table").style.display = "none";
+            document.getElementById("committee-table-div").style.display = "none";
+
+            // 清空現有表格內容
+            tbody.innerHTML = '';
+
+            // 填充組織編制的表格內容（職位、職責與配額）
+            organization.forEach(member => {
+                var row = document.createElement('tr');
+                var positionCell = document.createElement('td');
+                var descriptionCell = document.createElement('td');
+                var quotaCell = document.createElement('td'); // 配額欄位
+
+                positionCell.textContent = member.position;
+                descriptionCell.textContent = member.description;
+                quotaCell.textContent = member.quota; // 顯示配額
+
+                row.appendChild(positionCell);
+                row.appendChild(descriptionCell);
+                row.appendChild(quotaCell); // 插入配額欄位
+                tbody.appendChild(row);
+            });
+
+            title.innerHTML = "組織編制 - 職位與職責說明";
+        }
+
+        // 顯示歷屆委員 - 職位與姓名
+        function updateCommittee(year) {
+            var title = document.querySelector('h2');
+            var tbody = document.getElementById('history-body');
+            var committee = committees[year]; // 根據選擇的屆數取資料
+
+            // 顯示歷屆委員表格
+            document.getElementById("committee-table-div").style.display = "block";
+            document.getElementById("organization-table").style.display = "none";
+            document.getElementById("regulations-table").style.display = "none";
+
+            // 清空現有表格內容
+            tbody.innerHTML = '';
+
+            // 填充歷屆委員的表格內容（職位與姓名）
+            committee.forEach(member => {
+                var row = document.createElement('tr');
+                var positionCell = document.createElement('td');
+                var nameCell = document.createElement('td');
+
+                positionCell.textContent = member.position;
+                nameCell.textContent = member.name;
+
+                row.appendChild(positionCell);
+                row.appendChild(nameCell);
+                tbody.appendChild(row);
+            });
+
+            title.innerHTML = `${year} - 管理委員會組織架構`;
+        }
+
+        // 根據選擇的內容更新頁面
+        function updateContent(index) {
+            if (index === "規章制度") {
+                updateRegulations(); // 顯示規章制度
+            } else if (index === "組織編制") {
+                updateOrganization(); // 顯示組織編制
+            } else {
+                updateCommittee(index); // 顯示對應屆數的委員會
+            }
+        }
+
+        // 當下拉選單變更時，實現頁面跳轉
+        function navigateToPage() {
+            var select = document.getElementById("year-select");
+            var selectedValue = select.value;
+
+            if (selectedValue !== "#") {
+                window.location.href = selectedValue; // 進行頁面跳轉
+            }
+        }
+
+        // 頁面初始顯示規章制度
+        updateRegulations(); 
+    </script>
+</body>
+</html>

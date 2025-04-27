@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合作商家</title>
+    <style>
+        /* 基本設置 */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* 標題區域設置 */
+        .hero-section {
+            background-image: url('hero-image.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+            border-bottom: 4px solid #3498db;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+        }
+
+        /* 商家列表區域 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        #business-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        /* 標題區域 */
+        .subtitle-container {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .subtitle-main {
+            font-size: 2.5rem;
+            color: #3498db;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .subtitle-offer {
+            font-size: 2rem;
+            color: #2c3e50;
+            font-weight: bold;
+            background-color: #f39c12;
+            display: inline-block;
+            padding: 8px 16px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        /* 卡片樣式 */
+        .card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        .card h3 {
+            font-size: 1.8rem;
+            color: #333;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .card p {
+            font-size: 1rem;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 地址和電話格式 */
+        .address, .phone {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-size: 1rem;
+        }
+
+        /* 優惠條件區塊 */
+        .discount-conditions {
+            background-color: #f7f7f7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .discount-conditions h4 {
+            font-size: 1.2rem;
+            color: #f39c12;
+            margin-bottom: 10px;
+        }
+
+        .cta-link {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-link:hover {
+            background-color: #2980b9;
+        }
+
+        /* 行動呼籲區域樣式 */
+        .cta-section {
+            text-align: center;
+            background-color: #ecf0f1;
+            padding: 60px 20px;
+            margin-top: 60px;
+            border-top: 4px solid #3498db;
+        }
+
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px 35px;
+            font-size: 18px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #2980b9;
+        }
+
+        /* 頁面底部樣式 */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2c3e50;
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* 提升可讀性與響應式設計 */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+
+            .subtitle-main {
+                font-size: 2rem;
+            }
+
+            .subtitle-offer {
+                font-size: 1.5rem;
+            }
+
+            .card h3 {
+                font-size: 1.5rem;
+            }
+
+            .card p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁面標題區域 -->
+    <header class="hero-section">
+        <h1>合作商家</h1>
+        <p>了解我們的優質合作夥伴，並發現更多可能。</p>
+        <h2 class="subtitle-main">通關密語：天賜宮。</h2>
+        <h2 class="subtitle-offer">報宮名即享優惠</h2>
+    </header>
+
+    <!-- 商家列表標題區域 -->
+    <section class="subtitle-container">
+        <h1>我們的合作商家</h1>
+    </section>
+
+    <!-- 商家卡片區域 -->
+    <section id="business-list" class="container">
+        <div class="card">
+            <img src="business-a-logo.jpg" alt="商家A Logo" class="card-img">
+            <h3>阿傑 汽車保養修配廠</h3>
+            <p>提供專業的汽車修理、保養服務。無論是換油、修理引擎還是美容服務，我們都能提供最專業的技術與最貼心的服務。</p>
+            <span class="address">商家地址：彰化縣和美鎮福東路12-5號</span>
+            <span class="phone">連絡電話：0982-211520</span>
+            <div class="discount-conditions">
+                <h4>優惠條件：</h4>
+                <p>報宮名即可享受八折優惠，僅限首次服務。</p>
+            </div>
+            <a href="http://business-a.com" target="_blank" class="cta-link">了解更多</a>
+        </div>
+
+        <div class="card">
+            <img src="business-b-logo.jpg" alt="商家B Logo" class="card-img">
+            <h3>斗數算命 紫象草盧館</h3>
+            <p>提供專業的命理服務，幫助您解答未來的問題，探索更多人生的可能。</p>
+            <span class="address">商家地址：台中市西區建國路</span>
+            <span class="phone">連絡電話：0912-345678 蘇老師</span>
+            <div class="discount-conditions">
+                <h4>優惠條件：</h4>
+                <p>首次算命服務八折優惠。</p>
+            </div>
+            <a href="http://business-b.com" target="_blank" class="cta-link">了解更多</a>
+        </div>
+
+        <div class="card">
+            <img src="business-c-logo.jpg" alt="商家C Logo" class="card-img">
+            <h3>精緻美食餐廳</h3>
+            <p>提供精緻的料理，創新且美味的菜單，讓您品味生活的每一刻。</p>
+            <span class="address">商家地址：高雄市左營區自由路72號</span>
+            <span class="phone">連絡電話：0931-123456</span>
+            <div class="discount-conditions">
+                <h4>優惠條件：</h4>
+                <p>消費滿NT$2000，享免費餐點或飲品。</p>
+            </div>
+            <a href="http://business-c.com" target="_blank" class="cta-link">了解更多</a>
+        </div>
+    </section>
+
+    <!-- 行動呼籲區域 -->
+    <section class="cta-section">
+        <h2>加入我們的合作夥伴</h2>
+        <p>想成為我們的一部分，分享您的商業優勢並獲得更多曝光嗎？立即與我們聯繫。</p>
+        <a href="contact.html" class="cta-button">立即聯絡</a>
+    </section>
+
+    <!-- 頁腳 -->
+    <footer>
+        <p>版權所有 &copy; 2025 合作商家網頁</p>
+    </footer>
+
+</body>
+</html>

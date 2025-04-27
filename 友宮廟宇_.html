@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>相關連結</title>
+    <link rel="stylesheet" href="友宮廟宇.css">
+    <style>
+        /* Hero 區域 */
+        #hero {
+            position: relative;
+            width: 100%;
+            height: 500px; /* 可以根據需求調整高度 */
+            overflow: hidden; /* 隱藏超出範圍的圖片部分 */
+        }
+
+        /* 圖片容器，設為 Flex 以便橫向排列 */
+        .hero-images {
+            display: flex;
+            transition: transform 1s ease; /* 圖片切換時的過渡效果 */
+        }
+
+        /* 每張圖片的樣式 */
+        .hero-images img {
+            width: 100%; /* 圖片寬度自動填滿 */
+            height: auto;
+            object-fit: cover; /* 圖片自動填滿區域 */
+            display: none; /* 默認隱藏圖片 */
+        }
+
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1,
+        .hero-content p {
+            margin: 0;
+            padding: 0.5rem;
+        }
+
+        .hero-content button {
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            cursor: pointer;
+            background-color: rgba(0, 0, 0, 0.5); /* 按鈕背景顏色 */
+            color: white;
+            border: none;
+        }
+
+        /* 設置上一張和下一張圖片的按鈕 */
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 1rem;
+            cursor: pointer;
+        }
+
+        .prev {
+            left: 10px;
+        }
+
+        .next {
+            right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頁面導航區域 -->
+    <header>
+        <nav>
+            <div class="logo">相關連結</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首頁</a></li>
+                <li><a href="#business-list">合作宮廟</a></li>
+                <li><a href="#contact">聯絡我們</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero 區域，圖片瀏覽區 -->
+    <section id="hero">
+        <div class="hero-images">
+            <!-- 在這裡加入幻燈片圖片 -->
+            <img src="素材/幻燈區/20250330_1.jpg" alt="圖片1">
+            <img src="素材/幻燈區/20250330_.jpg" alt="圖片2">
+            <img src="素材/幻燈區/20250330.jpg" alt="圖片3">
+            <!-- 可以繼續加入更多圖片 -->
+        </div>
+
+        <div class="hero-content">
+            <h1>探索我們的宮廟合作夥伴</h1>
+            <p>在這裡，您將領略各大宮廟的深厚文化與信仰，讓我們一同尊敬並傳承這份神聖的力量。</p>
+            <button onclick="scrollToBusiness()">探索合作宮廟</button>
+        </div>
+
+        <!-- 上一張和下一張圖片的按鈕 -->
+        <span class="prev" onclick="moveSlide(-1)">&#10094;</span>
+        <span class="next" onclick="moveSlide(1)">&#10095;</span>
+    </section>
+
+    <!-- 合作宮廟清單區域 -->
+    <section id="business-list">
+        <h2>飲水思源</h2>
+        <div class="business-container">
+            <div class="business-card">
+                <h2>祖源</h2>
+                <img src="素材/友宮廟宇/桃園三進宮.jpg" alt="商家圖片 - 桃園三進宮">
+                <h3>桃園三進宮</h3>
+                <a href="https://www.facebook.com/profile.php?id=100069218306647" target="_blank" class="btn-facebook">Facebook粉絲團</a>
+                <a href="https://g.co/kgs/F1u7SMQ" target="_blank" class="btn-details">了解更多</a>
+            </div>
+
+            <div class="business-card">
+                <h2>同源</h2>
+                <img src="素材/友宮廟宇/桃園進武宮.jpg" alt="商家圖片 - 桃園進武宮">
+                <h3>桃園進武宮</h3>
+                <a href="https://www.facebook.com/p/%E6%A1%83%E5%9C%92%E9%80%B2%E6%AD%A6%E5%AE%AE-100064507037657/?locale=zh_HK&_rdr" target="_blank" class="btn-facebook">Facebook粉絲團</a>
+                <a href="合作宮廟_2.html" target="_blank" class="btn-details">了解更多</a>
+            </div>
+        </div>
+
+        <h2>交流聖地</h2>
+        <div class="business-container">
+            <div class="business-card">
+                <h2>友宮</h2>
+                <img src="素材/友宮廟宇/彰化三清宮.jpg" alt="商家圖片 - 彰化三清宮">
+                <h3>彰化三清宮</h3>
+                <a href="https://www.facebook.com/p/%E5%BD%B0%E5%8C%96%E4%B8%89%E6%B8%85%E5%AE%AE%E7%B2%89%E7%B5%B2%E5%9C%98-100066682933067/?locale=zh_TW" target="_blank" class="btn-facebook">Facebook粉絲團</a>
+                <a href="合作宮廟_2.html" target="_blank" class="btn-details">了解更多</a>
+            </div>
+
+            <div class="business-card">
+                <h2>友宮</h2>
+                <img src="素材/友宮廟宇/花壇三玄宮.jpg" alt="商家圖片 - 花壇三玄宮">
+                <h3>花壇三玄宮</h3>
+                <a href="https://www.facebook.com/p/%E5%BD%B0%E5%8C%96%E4%B8%89%E6%B8%85%E5%AE%AE%E7%B2%89%E7%B5%B2%E5%9C%98-100066682933067/?locale=zh_TW" target="_blank" class="btn-facebook">Facebook粉絲團</a>
+                <a href="合作宮廟_2.html" target="_blank" class="btn-details">了解更多</a>
+            </div>
+
+            <div class="business-card">
+                <h2>友宮</h2>
+                <img src="素材/友宮廟宇/花壇玉靈宮.jpg" alt="商家圖片 - 花壇玉靈宮">
+                <h3>花壇玉靈宮</h3>
+                <a href="https://www.facebook.com/p/%E5%BD%B0%E5%8C%96%E4%B8%89%E6%B8%85%E5%AE%AE%E7%B2%89%E7%B5%B2%E5%9C%98-100066682933067/?locale=zh_TW" target="_blank" class="btn-facebook">Facebook粉絲團</a>
+                <a href="合作宮廟_2.html" target="_blank" class="btn-details">了解更多</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 頁尾區域 -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 宮廟合作平台 | 版權所有</p>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Instagram</a>
+                <a href="#">Twitter</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 設定當前顯示的圖片索引
+        let currentSlideIndex = 0;
+
+        // 顯示某一張圖片
+        function showSlide(index) {
+            const slides = document.querySelectorAll('.hero-images img');
+            const totalSlides = slides.length;
+
+            // 如果索引超過圖片數量，則回到第一張圖片
+            if (index >= totalSlides) {
+                currentSlideIndex = 0;
+            } else if (index < 0) {
+                // 如果索引小於 0，則顯示最後一張圖片
+                currentSlideIndex = totalSlides - 1;
+            } else {
+                currentSlideIndex = index;
+            }
+
+            // 隱藏所有圖片
+            slides.forEach((slide, i) => {
+                slide.style.display = 'none';
+            });
+
+            // 顯示當前的圖片
+            slides[currentSlideIndex].style.display = 'block';
+        }
+
+        // 根據按鈕方向切換圖片
+        function moveSlide(direction) {
+            showSlide(currentSlideIndex + direction);
+        }
+
+        // 自動切換圖片，每 3 秒換一張
+        setInterval(() => {
+            moveSlide(1);  // 每次自動往前切換一張
+        }, 3000);
+
+        // 初始化時顯示第一張圖片
+        showSlide(currentSlideIndex);
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- 頁面字符集設置為UTF-8，支持多語言字符 -->
+    <meta charset="UTF-8">
+    
+    <!-- 設置頁面為響應式，適應不同設備的屏幕大小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- 頁面描述與關鍵字有助於SEO優化 -->
+    <meta name="description" content="查看最新的消息和活動，了解我們的最新動態。">
+    <meta name="keywords" content="最新消息, 活動, 日曆, 事件">
+
+    <!-- 設置頁面標題 -->
+    <title>最新消息</title>
+    
+    <!-- 引入外部CSS樣式 -->
+    <link rel="stylesheet" href="近期活動.CSS">
+</head>
+<body>
+
+    <!-- 頁面標題區域 -->
+    <header class="hero-section">
+        <a href="index.html" class="header-title">最新消息</a> 
+        
+        <p>隨時了解最新的動態與即將舉辦的活動，並查看我們的日曆。</p>
+    </header>
+
+    <!-- Google 日曆區域 -->
+    <div class="calendar-container">
+        <h1>查看我們的日曆</h1>
+        <iframe 
+            src="https://calendar.google.com/calendar/embed?src=fed68789afd73deb7258b05a29339d3315279772e215072bf5cbd26f1ca866fa%40group.calendar.google.com&ctz=Asia%2FTaipei" 
+            class="calendar-iframe"
+            frameborder="0" 
+            scrolling="no"
+            title="Google 日曆">
+        </iframe>
+    </div>
+
+    <!-- 最新消息區域 -->
+    <section class="news-section">
+        <h2>最新活動與公告</h2>
+
+        <!-- 最新消息項目 -->
+        <article class="news-item">
+            <h3>前往友宮參香祝壽</h3>
+            
+            <div class="event-details">
+                <p><strong>目的：</strong>參訪「桃園三進宮」及「桃園進武宮」，等2地。</p>
+                <p><strong>交通方式：</strong>遊覽車。集合地：天賜宮廣場前。</p>
+                <p><strong>報名人數：</strong>目前已有40人報名，名額有限。</p>
+                <p><strong>報名截止：</strong>2025年03月25日（星期三）</p>
+            </div>
+            
+            <p class="event-date">
+                <time datetime="2025-03-30">活動日期：2025年03月30日（星期日）</time>
+            </p>
+            
+            <div class="call-to-action">
+                <button class="btn-sign-up" disabled>報名已截止</button> <!-- 報名按鈕禁用 -->
+            </div>
+        </article>
+
+        <article class="news-item">
+            <h3>玄天上帝 誦經祝壽</h3>
+            <p>活動簡介：這是一個專注於教育的研討會，將有多位業界專家分享經驗。敬請期待。</p>
+            <p class="event-date">
+                <time datetime="2025-04-15">活動日期：2025年03月29日</time>
+            </p>
+        </article>
+
+    </section>
+
+    <!-- 頁腳 -->
+    <footer role="contentinfo">
+        <p>版權所有 &copy; 2025 最新消息網站</p>
+    </footer>
+
+</body>
+</html>

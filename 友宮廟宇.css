@@ -1,0 +1,209 @@
+/* 全局設置 */
+body {
+    font-family: Arial, sans-serif; /* 設定字型 */
+    margin: 0; /* 清除頁面邊距 */
+    padding: 0; /* 清除頁面內邊距 */
+    background-color: #f9f9f9; /* 頁面背景顏色 */
+    color: #333; /* 頁面文字顏色 */
+}
+
+/* 頁面導航 */
+header {
+    background: linear-gradient(90deg, #ff0000, #ff4d4d); /* 漸層背景: 從紅色到淡紅色 */
+    color: white; /* 文字顏色為白色 */
+    padding: 15px 0; /* 增加垂直間距 */
+    position: fixed; /* 固定在頁面頂部 */
+    top: 0; /* 顯示在頁面最上方 */
+    width: 100%; /* 寬度占滿整個頁面 */
+    z-index: 1000; /* 設定層級，保證導航條在最上層 */
+}
+
+nav {
+    display: flex; /* 使用彈性盒子佈局 */
+    justify-content: space-between; /* 使導航項目兩端對齊 */
+    align-items: center; /* 使導航項目垂直居中 */
+    padding: 0 20px; /* 增加左右內邊距 */
+}
+
+nav .logo {
+    font-size: 2em; /* 設定Logo字型大小 */
+    font-weight: bold; /* 設定Logo字型為粗體 */
+}
+
+.nav-links {
+    list-style: none; /* 去除列表樣式 */
+    display: flex; /* 使用彈性盒子佈局排列導航鏈接 */
+    gap: 20px; /* 設定導航項目之間的間距 */
+}
+
+.nav-links li a {
+    color: white; /* 設定文字顏色為白色 */
+    text-decoration: none; /* 移除下劃線 */
+    font-size: 16px; /* 設定字型大小 */
+}
+
+.nav-links li a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+/* Hero 區域 */
+#hero {
+    background-image: url('hero-image.jpg'); /* 設定背景圖片 */
+    background-size: cover; /* 背景圖片覆蓋整個區域 */
+    background-position: center; /* 背景圖片居中 */
+    padding: 120px 20px; /* 增加內邊距，使內容不緊湊 */
+    text-align: center; /* 文字居中 */
+    color: white; /* 文字顏色為白色 */
+    height: 100vh; /* 高度占滿整個視窗 */
+    display: flex; /* 使用彈性盒子佈局 */
+    justify-content: center; /* 使內容水平居中 */
+    align-items: center; /* 使內容垂直居中 */
+    flex-direction: column; /* 設定內容垂直排列 */
+    position: relative; /* 保證背景圖片正常顯示 */
+}
+
+#hero h1 {
+    font-size: 4rem; /* 設定標題字型大小 */
+    margin-bottom: 20px; /* 設定下方外邊距 */
+    font-weight: bold; /* 設定標題為粗體 */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* 為標題添加陰影，增加可讀性 */
+}
+
+#hero p {
+    font-size: 1.5rem; /* 設定段落字型大小 */
+    margin-bottom: 30px; /* 設定下方外邊距 */
+    line-height: 1.5; /* 設定行高，增加可讀性 */
+    font-weight: 300; /* 設定字型重量 */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* 為段落文字添加陰影 */
+}
+
+#hero button {
+    padding: 12px 30px; /* 按鈕內邊距 */
+    background-color: #007bff; /* 按鈕背景顏色 */
+    color: white; /* 按鈕文字顏色 */
+    border: none; /* 移除邊框 */
+    cursor: pointer; /* 設定鼠標為可點擊狀態 */
+    font-size: 1.2rem; /* 設定字型大小 */
+    border-radius: 5px; /* 設定圓角 */
+    transition: background-color 0.3s, transform 0.3s; /* 設定背景色和變形的過渡效果 */
+    text-transform: uppercase; /* 文字大寫 */
+    font-weight: bold; /* 設定文字為粗體 */
+}
+
+#hero button:hover {
+    background-color: #0056b3; /* 滑鼠懸停時改變背景顏色 */
+    transform: scale(1.05); /* 滑鼠懸停時，按鈕輕微放大 */
+}
+
+/* 商家清單 */
+#business-list {
+    padding: 50px 20px; /* 設定內邊距 */
+    text-align: center; /* 文字居中 */
+    background-color: #fff; /* 背景顏色為白色 */
+    margin-top: 100px; /* 防止被固定的導航欄遮擋 */
+}
+
+#business-list h2 {
+    font-size: 2rem; /* 設定標題字型大小 */
+    margin-bottom: 20px; /* 設定下方外邊距 */
+}
+
+.business-container {
+    display: grid; /* 使用網格佈局 */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* 設定自適應的網格列 */
+    gap: 20px; /* 設定項目之間的間距 */
+    margin-top: 20px; /* 設定上方外邊距 */
+}
+
+.business-card {
+    background-color: white; /* 背景顏色為白色 */
+    padding: 20px; /* 內邊距 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+    text-align: center; /* 文字居中 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 設定過渡效果 */
+}
+
+.business-card img {
+    width: 100%; /* 使圖片寬度自動填滿父容器 */
+    height: 200px; /* 設定圖片高度 */
+    object-fit: cover; /* 設定圖片覆蓋方式 */
+    border-radius: 8px; /* 圓角 */
+}
+
+.business-card h3 {
+    margin-top: 15px; /* 設定上方外邊距 */
+    font-size: 1.5rem; /* 設定字型大小 */
+}
+
+/* 改進按鈕設計 */
+.business-card a {
+    display: block; /* 改為塊級元素，使其自動填滿父容器寬度 */
+    padding: 10px 0; /* 設定縱向內邊距 */
+    font-weight: bold; /* 設定字型為粗體 */
+    text-align: center; /* 文字居中 */
+    text-decoration: none; /* 移除文字裝飾 */
+    border-radius: 5px; /* 圓角 */
+    margin-top: 15px; /* 設定上方外邊距 */
+    width: 100%; /* 使按鈕填滿父容器 */
+    font-size: 1rem; /* 統一字型大小 */
+}
+
+/* Facebook 粉絲團按鈕 */
+.btn-facebook {
+    background-color: #1877f2; /* 設定Facebook藍色 */
+    color: white; /* 文字顏色為白色 */
+    border: none; /* 移除邊框 */
+}
+
+.btn-facebook:hover {
+    background-color: #145dbf; /* 滑鼠懸停時背景顏色變為深藍色 */
+    transform: scale(1.05); /* 滑鼠懸停時，按鈕輕微放大 */
+}
+
+/* 查看詳細資料按鈕 */
+.btn-details {
+    background-color: #28a745; /* 設定綠色 */
+    color: white; /* 文字顏色為白色 */
+    border: none; /* 移除邊框 */
+}
+
+.btn-details:hover {
+    background-color: #218838; /* 滑鼠懸停時，背景顏色變為深綠色 */
+    transform: scale(1.05); /* 滑鼠懸停時，按鈕輕微放大 */
+}
+
+/* 過渡效果 */
+.business-card a:hover {
+    text-decoration: none; /* 滑鼠懸停時移除文字裝飾 */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* 添加陰影效果 */
+}
+
+/* 頁尾 */
+footer {
+    background: linear-gradient(90deg, #ff0000, #ff4d4d); /* 漸層背景: 從紅色到淡紅色 */
+    color: white; /* 文字顏色為白色 */
+    padding: 30px 0; /* 增加垂直內邊距 */
+    text-align: center; /* 文字居中 */
+}
+
+footer .social-links a {
+    color: white; /* 文字顏色為白色 */
+    text-decoration: none; /* 移除文字裝飾 */
+    margin: 0 10px; /* 設定項目之間的間距 */
+}
+
+footer .social-links a:hover {
+    text-decoration: underline; /* 滑鼠懸停時顯示下劃線 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    #hero h1 {
+        font-size: 2rem; /* 響應式下標題字型縮小 */
+    }
+
+    .business-container {
+        grid-template-columns: 1fr; /* 在小螢幕下，將商家清單設定為單列顯示 */
+    }
+}

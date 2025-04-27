@@ -1,0 +1,208 @@
+/* 通用樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 使元素的大小包括邊框和內邊距 */
+}
+
+/* 定義變數 */
+:root {
+    --primary-color: #2c3e50; /* 主要顏色 */
+    --accent-color: #18bc9c; /* 強調顏色 */
+    --background-color: #f4f4f4; /* 頁面背景色 */
+    --light-background: #ffffff; /* 淺色背景 */
+    --hover-color: #16a085; /* 懸停顏色 */
+    --text-color: #333; /* 文字顏色 */
+    --main-content-bg: #fefefe; /* 右側內容區背景顏色 */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* 陰影顏色 */
+    --highlight-color: #e7f7f6; /* 內容區域突出顏色 */
+}
+
+/* 設定頁面基礎樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設定字體 */
+    background-color: var(--background-color); /* 設定背景顏色 */
+    color: var(--text-color); /* 設定文字顏色 */
+    line-height: 1.6; /* 設定行距 */
+}
+
+/* 頁首樣式 */
+header {
+    background-color: var(--primary-color); /* 頁首背景色 */
+    color: white; /* 頁首文字顏色 */
+    text-align: center; /* 文字置中 */
+    padding: 30px 0; /* 上下內邊距 */
+    position: relative; /* 相對定位 */
+}
+
+/* 標題樣式 */
+header h1 {
+    font-size: 2.5em; /* 設定字體大小 */
+}
+
+/* 下拉選單樣式 */
+nav select {
+    background-color: var(--accent-color); /* 背景顏色 */
+    color: white; /* 文字顏色 */
+    font-size: 1.2em; /* 字體大小 */
+    padding: 10px 20px; /* 內邊距 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 設定圓角 */
+    cursor: pointer; /* 設定指標為點擊樣式 */
+    width: 100%; /* 寬度設為100% */
+    max-width: 350px; /* 最大寬度限制 */
+    display: block; /* 占據整個父元素的寬度 */
+    margin: 20px auto; /* 上下外邊距，水平居中 */
+    transition: background-color 0.3s ease; /* 背景顏色過渡效果 */
+}
+
+/* 下拉選單懸停效果 */
+nav select:hover {
+    background-color: var(--hover-color); /* 懸停顏色 */
+}
+
+/* 左側側邊欄樣式 */
+aside.sidebar {
+    width: 25%; /* 側邊欄寬度 */
+    background-color: var(--primary-color); /* 背景顏色 */
+    color: white; /* 文字顏色 */
+    padding: 20px; /* 內邊距 */
+    border-radius: 8px; /* 設定圓角 */
+    margin-top: 20px; /* 上外邊距 */
+    flex-shrink: 0; /* 防止縮放 */
+    transition: transform 0.3s ease-in-out; /* 變換過渡效果 */
+}
+
+/* 側邊欄懸停效果 */
+aside.sidebar:hover {
+    transform: translateX(5px); /* 懸停時向右移動5px */
+}
+
+/* 側邊欄標題樣式 */
+aside.sidebar h3 {
+    font-size: 1.5em; /* 設定字體大小 */
+    margin-bottom: 20px; /* 底部外邊距 */
+}
+
+/* 側邊欄列表樣式 */
+aside.sidebar ul {
+    list-style-type: none; /* 移除列表項目標誌 */
+}
+
+/* 側邊欄列表項目樣式 */
+aside.sidebar ul li {
+    margin-bottom: 10px; /* 底部外邊距 */
+}
+
+/* 側邊欄列表連結樣式 */
+aside.sidebar ul li a {
+    color: white; /* 文字顏色 */
+    text-decoration: none; /* 移除底線 */
+    font-size: 1.2em; /* 字體大小 */
+    transition: color 0.3s; /* 顏色過渡效果 */
+}
+
+/* 側邊欄列表連結懸停效果 */
+aside.sidebar ul li a:hover {
+    color: var(--accent-color); /* 懸停顏色 */
+}
+
+/* 主要內容區域 */
+.content {
+    width: 75%; /* 主要內容區域寬度 */
+    padding: 40px 30px; /* 內邊距 */
+    background-color: var(--main-content-bg); /* 背景顏色 */
+    border-radius: 8px; /* 圓角 */
+    box-shadow: 0px 4px 12px var(--shadow-color); /* 陰影效果 */
+    margin-top: 20px; /* 上外邊距 */
+    flex-grow: 1; /* 使內容區域增長 */
+    transition: transform 0.3s ease; /* 變換過渡效果 */
+}
+
+/* 內容標題樣式 */
+.content h2 {
+    font-size: 2.5em; /* 字體大小 */
+    color: var(--primary-color); /* 文字顏色 */
+    margin-bottom: 20px; /* 底部外邊距 */
+    border-bottom: 2px solid var(--accent-color); /* 底部邊框 */
+    padding-bottom: 10px; /* 底部內邊距 */
+}
+
+/* 表格樣式 */
+table {
+    width: 100%; /* 寬度100% */
+    border-collapse: collapse; /* 合併邊框 */
+    margin-top: 20px; /* 上外邊距 */
+    border: 1px solid #ddd; /* 邊框顏色 */
+    border-radius: 8px; /* 圓角 */
+    text-align: center; /* 文字置中 */
+}
+
+/* 表格標題與內容樣式 */
+th, td {
+    padding: 12px; /* 內邊距 */
+    text-align: center; /* 文字置中 */
+    vertical-align: middle; /* 垂直置中 */
+    border-bottom: 1px solid #ddd; /* 下邊框 */
+}
+
+/* 表格標題背景色 */
+th {
+    background-color: var(--accent-color); /* 背景顏色 */
+    color: white; /* 文字顏色 */
+}
+
+/* 表格資料單元格背景色 */
+td {
+    background-color: var(--light-background); /* 背景顏色 */
+}
+
+/* 表格偶數列的背景色 */
+tr:nth-child(even) td {
+    background-color: #e9e9e9; /* 偶數列背景顏色 */
+}
+
+/* 表格單元格懸停效果 */
+td:hover {
+    background-color: #f1f1f1; /* 懸停時背景顏色 */
+}
+
+/* 主體內容區域佈局 */
+.main-container {
+    display: flex; /* 使用彈性佈局 */
+    justify-content: space-between; /* 項目間隔 */
+    padding: 20px; /* 內邊距 */
+    margin-top: 20px; /* 上外邊距 */
+    flex-wrap: wrap; /* 允許換行 */
+}
+
+.main-container > * {
+    flex: 1; /* 使所有項目等分 */
+    min-width: 300px; /* 設定最小寬度 */
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center; /* 文字置中 */
+    padding: 20px 0; /* 上下內邊距 */
+    background-color: var(--primary-color); /* 背景顏色 */
+    color: white; /* 文字顏色 */
+    margin-top: 40px; /* 上外邊距 */
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column; /* 垂直排列 */
+        align-items: center; /* 置中對齊 */
+    }
+
+    aside.sidebar {
+        width: 100%; /* 側邊欄佔滿整個寬度 */
+        margin-bottom: 20px; /* 底部外邊距 */
+    }
+
+    .content {
+        width: 100%; /* 內容區域寬度100% */
+    }
+}

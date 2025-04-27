@@ -1,0 +1,142 @@
+/* 設置全局顏色變數 */
+:root {
+    --primary-color: #26e215;  /* 深藍色 */
+    --secondary-color: #18bc9c; /* 綠色 */
+    --text-color: #333;         /* 深灰文字 */
+    --background-color: #f4f4f4;/* 淺灰背景 */
+    --font-size-base: 1em;      /* 基本字體大小 */
+    --font-size-large: 2.5em;   /* 大字體 */
+    --font-size-medium: 2em;    /* 中等字體 */
+}
+
+/* 通用樣式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* 確保元素大小計算不受邊距影響 */
+}
+
+/* 全局樣式 */
+body {
+    font-family: 'Arial', sans-serif; /* 簡潔現代的字體 */
+    background-color: var(--background-color); /* 背景色 */
+    color: var(--text-color); /* 文字顏色 */
+    line-height: 1.6; /* 增加行高改善可讀性 */
+    padding: 0;
+    margin: 0;
+    min-height: 100vh; /* 頁面最少覆蓋整個視窗 */
+}
+
+/* 頁首樣式 */
+header {
+    background-color: var(--primary-color); /* 使用變數顏色 */
+    color: white; /* 白色文字 */
+    text-align: center;
+    padding: 30px 0;
+    width: 100%; /* 頁首寬度滿版 */
+}
+
+header h1 {
+    font-size: var(--font-size-large); /* 大字體 */
+    margin-bottom: 10px; /* 標題與選單間距 */
+}
+
+/* 優化主頁標題連結樣式 */
+.header-title {
+    font-size: 2em; /* 標題字體大小 */
+    font-weight: bold; /* 使文字加粗，增強可讀性 */
+    color: var(--primary-color); /* 設定顏色為頁首一致的深藍色 */
+    text-decoration: none; /* 去除下劃線，讓它看起來像普通文本 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 添加過渡效果，平滑過渡顏色與縮放效果 */
+    padding: 10px 0; /* 頂部與底部間距，讓文字有足夠的呼吸空間 */
+    display: inline-block; /* 讓連結在同一行顯示 */
+}
+
+.header-title:hover {
+    color: var(--secondary-color); /* 懸停時顏色變化為綠色 */
+    transform: scale(1.05); /* 懸停時輕微放大，增強互動感 */
+}
+
+.header-title:focus {
+    outline: none; /* 去除焦點輪廓 */
+    color: var(--secondary-color); /* 焦點時顏色與懸停一致 */
+}
+
+/* 下拉選單樣式 */
+nav {
+    margin-top: 20px;
+}
+
+select {
+    background-color: var(--primary-color);
+    color: white;
+    font-size: 1.2em;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px; /* 最大寬度350px */
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s ease; /* 加入過渡效果 */
+}
+
+select:hover {
+    background-color: var(--secondary-color); /* 鼠標懸停變綠 */
+}
+
+/* 主要內容區域 */
+main {
+    width: 100%;
+    padding: 20px;
+}
+
+h2 {
+    margin-top: 20px;
+    color: var(--primary-color); /* 使用頁首顏色 */
+    font-size: var(--font-size-medium);
+}
+
+ol {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+strong {
+    color: var(--secondary-color); /* 強調文字顏色 */
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center;
+    padding: 20px 0;
+    background-color: var(--primary-color);
+    color: white;
+    margin-top: 40px;
+    width: 100%;
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2em; /* 小螢幕時標題縮小 */
+    }
+
+    select {
+        width: 80%; /* 適應小螢幕 */
+        font-size: 1em; /* 字體大小調整 */
+    }
+
+    main {
+        padding: 10px; /* 減少內邊距 */
+    }
+
+    footer {
+        padding: 15px 0; /* 頁尾內邊距縮小 */
+    }
+}

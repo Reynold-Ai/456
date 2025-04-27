@@ -1,0 +1,126 @@
+/* 定義變數 */
+:root {
+    --primary-color: #2c3e50; /* 主要顏色 */
+    --accent-color: #18bc9c; /* 強調顏色 */
+    --background-color: #f4f4f4; /* 頁面背景色 */
+    --light-background: #ffffff; /* 淺色背景 */
+    --hover-color: #16a085; /* 懸停顏色 */
+    --text-color: #333; /* 文字顏色 */
+    --main-content-bg: #fefefe; /* 右側內容區背景顏色 */
+    --shadow-color: rgba(0, 0, 0, 0.1); /* 陰影顏色 */
+    --highlight-color: #e7f7f6; /* 內容區域突出顏色 */
+}
+/* 設定頁面基礎樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設定字體為Arial，sans-serif為後備字體 */
+    background-color: #f4f4f4; /* 設定頁面背景色 */
+    color: #333; /* 設定文字顏色 */
+    line-height: 1.6; /* 行高設為1.6，增強可讀性 */
+    padding: 0 20px; /* 頁面左右加入內邊距 */
+}
+
+/* 頁首樣式 */
+header {
+    background-color: #2c3e50; /* 頁首背景顏色 */
+    color: white; /* 頁首文字顏色為白色 */
+    text-align: center; /* 文字置中 */
+    padding: 30px 0; /* 頁首上下內邊距 */
+}
+
+/* 頁首標題樣式 */
+header h1 {
+    font-size: 2.5em; /* 設定標題字體大小 */
+}
+
+/* 下拉選單樣式，放置於header中 */
+nav select {
+    background-color: var(--accent-color); /* 設定下拉選單背景顏色 */
+    color: white; /* 文字顏色為白色 */
+    font-size: 1.2em; /* 字體大小 */
+    padding: 10px 20px; /* 內邊距 */
+    border: none; /* 移除邊框 */
+    border-radius: 5px; /* 設定圓角 */
+    cursor: pointer; /* 使游標變為指針形狀 */
+    width: 100%; /* 寬度為100% */
+    max-width: 350px; /* 最大寬度限制為350px */
+    display: block; /* 顯示為塊級元素，便於居中 */
+    margin: 20px auto; /* 上下外邊距20px，並使其水平居中 */
+    transition: background-color 0.3s ease; /* 背景顏色過渡效果 */
+}
+
+/* 下拉選單懸停效果 */
+nav select:hover {
+    background-color: var(--hover-color); /* 懸停時改變背景顏色 */
+}
+
+/* 主要內容區域 */
+main {
+    background-color: white; /* 主要內容區背景色 */
+    padding: 20px; /* 內邊距 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
+    margin-top: 20px; /* 上外邊距 */
+    border-radius: 8px; /* 圓角設計 */
+}
+
+/* 無序列表樣式 */
+ul {
+    list-style-type: none; /* 取消圓點 */
+    padding-left: 0; /* 取消內邊距 */
+}
+
+/* 表格樣式 */
+table {
+    width: 100%; /* 表格寬度為100% */
+    border-collapse: collapse; /* 合併邊框 */
+    margin-top: 20px; /* 上外邊距 */
+}
+
+/* 表格單元格樣式 */
+th, td {
+    padding: 15px; /* 內邊距 */
+    text-align: left; /* 文字左對齊 */
+    border-bottom: 1px solid #ddd; /* 設置底部邊框 */
+}
+
+/* 表格標題樣式 */
+th {
+    background-color: #16c9d6; /* 設定表格標題背景顏色 */
+    color: white; /* 標題文字顏色 */
+}
+
+/* 表格偶數行背景顏色 */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* 偶數行背景色 */
+}
+
+/* 表格行懸停效果 */
+tr:hover {
+    background-color: #f1f1f1; /* 懸停行背景顏色 */
+}
+
+/* 圖片樣式 */
+.image {
+    display: block; /* 使圖片變為塊級元素 */
+    width: 100%; /* 圖片寬度自適應父容器 */
+    height: auto; /* 高度自動保持比例 */
+    max-width: 120px; /* 設置最大寬度限制 */
+    border-radius: 8px; /* 圓角設計 */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* 輕微陰影效果 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* 圖片懸停時的過渡效果 */
+    margin: 0 auto; /* 使圖片在父容器內水平居中 */
+}
+
+/* 圖片懸停效果 */
+.image:hover {
+    transform: scale(1.05); /* 輕微放大效果 */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2); /* 增加陰影深度 */
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center; /* 文字置中 */
+    background-color: #2c3e50; /* 頁尾背景顏色 */
+    color: white; /* 頁尾文字顏色 */
+    padding: 20px 0; /* 頁尾上下內邊距 */
+    margin-top: 40px; /* 上外邊距 */
+}

@@ -1,0 +1,186 @@
+/* 通用重置 */
+*,
+*::before,
+*::after {
+    margin: 0; /* 清除所有元素的外邊距 */
+    padding: 0; /* 清除所有元素的內邊距 */
+    box-sizing: border-box; /* 包括邊框和內邊距在內，計算元素的總寬度與高度 */
+}
+
+/* 網頁基本樣式 */
+body {
+    font-family: Arial, sans-serif; /* 設定字型 */
+    background: url("素材/天賜宮外觀.jpg") center/cover no-repeat, linear-gradient(to bottom, rgba(217, 167, 199, 0.6), rgba(255, 252, 220, 0.6)); /* 設定背景圖片與漸層 */
+    color: #333; /* 設定文字顏色 */
+    height: 100vh; /* 設定頁面高度為視口的高度 */
+    line-height: 1.6; /* 設定行高，增強可讀性 */
+}
+
+/* 頁首樣式 */
+header {
+    display: flex; /* 使用 Flexbox 佈局 */
+    justify-content: space-between; /* 頁首的標題與選單兩端排列 */
+    align-items: center; /* 垂直居中 */
+    background-color: rgba(76, 175, 80, 0.9); /* 設定背景顏色並添加透明度 */
+    color: white; /* 設定文字顏色為白色 */
+    padding: 20px 10%; /* 設定內邊距，並讓內邊距在不同螢幕寬度下自動調整 */
+    text-align: center; /* 文字置中 */
+    position: relative; /* 設定相對定位 */
+}
+
+/* 美化首頁標題樣式 */
+header .header-title {
+    font-family: 'Dancing Script', cursive; /* 使用 Google 字體 Dancing Script */
+    font-size: 48px; /* 設定字體大小 */
+    font-weight: bold; /* 設定字體加粗 */
+    text-decoration: none; /* 去除標題的下劃線 */
+    color: white; /* 設定標題顏色 */
+    letter-spacing: 3px; /* 設定字母間距，使標題更為突出 */
+    text-transform: uppercase; /* 將文字轉為大寫 */
+    transition: color 0.3s ease, transform 0.3s ease; /* 增加過渡效果 */
+}
+
+/* 懸停效果 */
+header .header-title:hover {
+    color: #4CAF50; /* 懸停時顯示綠色 */
+    transform: scale(1.1); /* 懸停時放大標題 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4); /* 增加陰影效果，讓標題更立體 */
+}
+
+/* 頁首導航菜單 */
+header ul {
+    list-style: none; /* 去除列表項目的項目符號 */
+    display: flex; /* 使用 Flexbox 佈局 */
+    gap: 20px; /* 設定選項間距 */
+}
+
+header li {
+    display: inline-block; /* 設定列表項目為橫向排列 */
+}
+
+header a {
+    color: white; /* 設定連結文字顏色為白色 */
+    text-decoration: none; /* 去除連結下劃線 */
+    font-weight: bold; /* 設定字體加粗 */
+    font-size: 18px; /* 設定字體大小 */
+}
+
+/* 美化符號圖片 */
+.symbol-img {
+    width: 24px; /* 設定符號圖片寬度 */
+    height: 24px; /* 設定符號圖片高度 */
+    border-radius: 50%; /* 圓形邊框 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* 添加陰影效果 */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* 添加過渡效果 */
+}
+
+/* 懸停符號圖片時，圖片放大並加強陰影效果 */
+.symbol-img:hover {
+    transform: scale(1.2); /* 輕微放大圖片 */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* 增強陰影效果 */
+}
+
+/* 主要內容區域 */
+main {
+    padding: 20px; /* 設定內邊距 */
+    background-color: rgba(0, 0, 0, 0); /* 設定背景為透明 */
+    margin-top: 20px; /* 設定與頁首的間距 */
+
+    /* Facebook 插件樣式 */
+    .fb-page {
+        position: fixed; /* 固定位置 */
+        right: 5px; /* 設置距離右邊為 0 */
+        bottom: 330px; /* 設置距離底部為 0 */
+        z-index: 9999; /* 確保層級最高，顯示在其他元素之上 */
+        width: 300px; /* 設置寬度 */
+        height: 300px; /* 設置高度 */
+    }
+}
+
+/* section 區域的內邊距 */
+section {
+    padding-left: 3vw; /* 設定左側內邊距為視口寬度的 3% */
+}
+
+/* 音樂播放器樣式 */
+.audio-player {
+    position: fixed; /* 固定位置 */
+    bottom: 130px; /* 設置距離底部為 20px */
+    left: 10px; /* 設置距離左邊為 20px */
+    z-index: 9999; /* 確保音樂播放器顯示在最前面 */
+    background: rgba(255, 255, 255, 0.7); /* 半透明背景 */
+    padding: 5px; /* 設定內邊距 */
+    border-radius: 10px; /* 邊角圓滑 */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* 添加陰影效果 */
+}
+
+/* 頁尾樣式 */
+footer {
+    text-align: center; /* 文字置中 */
+    padding: 10px; /* 設定內邊距 */
+    background-color: rgba(51, 51, 51, 0.8); /* 設定頁尾背景顏色並添加透明度 */
+    color: white; /* 設定文字顏色為白色 */
+    position: fixed; /* 設定為固定位置，頁尾會固定在頁面底部 */
+    width: 100%; /* 頁尾寬度為 100% */
+    bottom: 0; /* 固定在頁面底部 */
+}
+
+footer ul {
+    list-style: none; /* 去除列表項目的項目符號 */
+    padding: 0;
+    font-size: 16px; /* 設定字體大小 */
+}
+
+footer a {
+    color: white; /* 設定連結文字顏色為白色 */
+    text-decoration: none; /* 去除連結下劃線 */
+}
+
+/* Banner 區域 */
+.banner {
+    padding-top: 150px; /* 設定上內邊距，確保內容不會被擠壓 */
+    width: 100%; /* 設定寬度為 100% */
+    height: 600px; /* 設定 Banner 區域的預設高度 */
+    background-image: url("#"); /* 設定背景圖片 */
+    background-size: cover; /* 背景圖片覆蓋整個區域 */
+    background-position: center; /* 背景圖片置中 */
+    background-repeat: no-repeat; /* 防止背景圖片重複 */
+}
+
+/* 標語樣式 */
+.quote {
+    width: 50%; /* 設定寬度為 50% */
+    margin: 0 auto; /* 使標語區域居中 */
+    font-size: 50px; /* 設定字體大小 */
+    color: grey; /* 設定字體顏色 */
+    padding-left: 20px; /* 設定左邊距 */
+    border-left: 10px solid #fff; /* 設定左邊邊框 */
+}
+
+/* 響應式設計：針對螢幕寬度小於768px的裝置 */
+@media (max-width: 768px) {
+    header {
+        padding: 20px; /* 減少頁首的內邊距 */
+    }
+    .quote {
+        font-size: 30px; /* 減小標語字體大小 */
+        width: 80%; /* 減小標語的寬度 */
+    }
+    .banner {
+        height: 400px; /* 減少 Banner 區域的高度 */
+    }
+}
+
+/* 響應式設計：針對螢幕寬度小於480px的裝置 */
+@media (max-width: 480px) {
+    footer {
+        padding: 5px; /* 減少頁尾的內邊距 */
+    }
+    .quote {
+        font-size: 24px; /* 進一步減小標語字體大小 */
+        width: 90%; /* 更改標語寬度 */
+    }
+    .banner {
+        height: 300px; /* 進一步減少 Banner 區域的高度 */
+    }
+}

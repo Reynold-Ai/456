@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8"> <!-- 設定字符編碼為UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- 設定響應式設計 -->
+    <title>天賜宮</title> <!-- 頁面標題 -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> <!-- 引入Google字體 Dancing Script -->
+    <link rel="stylesheet" href="style.css"> <!-- 引入外部CSS檔案 -->
+</head>
+<body>
+
+    <header>
+        <a href="index.html" class="header-title" data-text="天賜宮">天賜宮</a>
+        <nav>
+            <ul>
+                <li><a href="近期活動_.html">最新消息</a></li>
+                <li><a href="關於我們_.html">關於我們</a></li>
+                <li><a href="服務項目_.html">服務項目</a></li>
+                <li><a href="相關連結_.html">相關連結</a></li>
+            </ul>
+        </nav>
+    </header>
+     
+    <main>
+        <section>
+            <div class="banner">
+                <div class="quote">
+                    <p>關聖帝君傳世明訓 — 「讀好書、說好話、行好事、做好人」。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 音樂播放器，放置於右上角 -->
+        <div class="audio-player">
+            <audio id="background-music" controls autoplay>
+                <source src="素材/《關聖帝君伏魔真經》 唱誦版.mp3" type="audio/mp3">
+                您的瀏覽器不支援音樂播放。
+            </audio>
+        </div>
+
+        <!-- Facebook 插件 -->
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/zh_TW/sdk.js#xfbml=1&version=v22.0"></script>
+        <div class="fb-page" data-href="https://www.facebook.com/profile.php?id=61574038500816" 
+        data-tabs="timeline" 
+        data-small-header="false" 
+        data-adapt-container-width="true" 
+        data-hide-cover="false" 
+        data-show-facepile="true">
+            <blockquote cite="https://www.facebook.com/profile.php?id=61574038500816" class="fb-xfbml-parse-ignore">
+                <a href="https://www.facebook.com/profile.php?id=61574038500816">花壇 天公山 天賜宮</a>
+            </blockquote>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <li><span>&#128222;</span> <a href="tel:047860241">市話：04 - 7860241</a> | <a href="tel:047866263">7866263</a></li>
+            <li><span>&#128231;</span> <a href="mailto:someone@domain.com">電子信箱：someone@domain.com</a></li>
+            <li><span>&#128205;</span> <a href="https://maps.app.goo.gl/UzKBhyvZN3FwP3nj9">地址：503彰化縣花壇鄉灣東路145巷151號</a></li>
+        </ul>
+        <p>版權所有 © 2025 花壇天賜宮</p>
+    </footer>
+    
+    
+    
+
+    <!-- 音樂控制：設置初始音量 -->
+    <script>
+        window.onload = function() {
+            var audioElement = document.getElementById('background-music');
+            audioElement.volume = 1.0;  // 設置音量為 30% (0.0 到 1.0 之間)
+        }
+    </script>
+
+</body>
+</html>

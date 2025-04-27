@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <!-- 設定文件的字符編碼為 UTF-8，確保多語言顯示正常 -->
+    <meta charset="UTF-8">
+    
+    <!-- 設定響應式設計，使頁面能在不同設備上自適應顯示 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- 設定頁面的標題 -->
+    <title>歷任宮主介紹</title>
+
+    <!-- 引入外部 CSS 樣式表 -->
+    <link rel="stylesheet" href="歷任宮主.css">
+</head>
+<body>
+
+    <!-- 頁首區域 -->
+    <header>
+        <!-- 主標題 -->
+        <h1>關於我們</h1>
+        
+        <nav>
+            <!-- 下拉式選單，用於頁面間導航 -->
+            <select id="pageSelect" onchange="navigateToPage()">
+                <!-- 當前頁面選項 -->
+                <option value="歷任宮主.html" selected>歷任宮主</option>
+                <option value="關於我們_.html">地理概述</option>
+                <option value="創建歷史.html">創建歷史</option>
+            </select>
+
+            <!-- 介紹宮主職責的簡短說明 -->
+            <p>➢宮主負責廟務的管理和維護，與管理委員的職責性質有所不同。</p>
+        </nav>
+    </header>
+
+    <!-- 主要內容區域 -->
+    <main>
+        <div class="container">
+            <!-- 宮主介紹表格 -->
+            <table class="宮主介紹表格">
+                <thead>
+                    <!-- 表格頭部，顯示標題 -->
+                    <tr>
+                        <th>宮主照片</th>
+                        <th>簡歷</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 第1位宮主介紹 -->
+                    <tr>
+                        <td><img src="素材/天賜宮/歷任宮主_相冊/頭像.png" alt="宮主1照片" class="image"></td>
+                        <td>
+                            <h3>第X任 - 陳X福</h3>
+                            <p>此為簡歷內容示例</p>
+                        </td>
+                    </tr>
+
+                    <!-- 第2位宮主介紹 -->
+                    <tr>
+                        <td><img src="素材/天賜宮/歷任宮主_相冊/signal-2025-04-06-210337_002.jpeg" alt="宮主2照片" class="image"></td>
+                        <td>
+                            <h3>第Y任 - 陳正義</h3>
+                            <h4>任期：年月日 至 迄今</h4>
+                            <ul>
+                                <!-- 資歷列出 -->
+                                <li><strong>資歷：</strong></li>
+                                <li>中國嗣漢道教總會-會員代表-彰化處-處長</li>
+                                <li>中國嗣漢天師府奏職法師</li>
+                                <li>中國嗣漢天師府護法法師</li>
+                                
+                                <!-- 證書列出 -->
+                                <li><strong>證書：</strong></li>
+                                <li>正一盟威經籙</li>
+                                <li>三五都功經籙</li>
+                            </ul>
+                        </td>
+                    </tr>
+                    <!-- 可以繼續添加更多宮主條目 -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- 頁尾區域 -->
+    <footer>
+        <p>版權所有 © 2025</p>
+    </footer>
+
+    <script>
+        // 用於選擇頁面後跳轉的函式
+        function navigateToPage() {
+            var selectElement = document.getElementById("pageSelect");
+            var selectedPage = selectElement.value;
+            window.location.href = selectedPage;
+        }
+
+        // 頁面加載後自動選擇對應的下拉選項
+        window.onload = function() {
+            var currentPage = window.location.pathname.split("/").pop(); // 取得當前頁面名稱
+            var selectElement = document.getElementById("pageSelect");
+
+            // 選擇當前頁面對應的選項
+            for (var i = 0; i < selectElement.options.length; i++) {
+                if (selectElement.options[i].value === currentPage) {
+                    selectElement.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
